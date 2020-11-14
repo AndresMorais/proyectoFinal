@@ -1,0 +1,24 @@
+<h1>ESTA ES LA PAGINA DE CONTACTO</h1>
+
+<form method="POST" action="@Url.Action("EnviarContacto","Home")">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input name="nombre" type="text" placeholder="Ingresá tu nombre...">
+    </div>
+
+    <div class="form-group">
+        <label for="apellido">Apellido</label>
+        <input name="apelliido" type="text" placeholder="Ingresá tu apellido..." required>
+    </div>
+
+    <div class="form-group">
+        <label for="mail">Email</label>
+        <input name="mail" type="text" placeholder="Ingresá tu email..." required>
+    </div>
+     <div class="form-group">
+        <label for="consulta">Consulta</label>
+        <textarea name="consulta" placeholder="Dejanos tu consulta..." required></textarea>
+    </div>
+
+    <input type="submit" value="Enviar">
+</form>
