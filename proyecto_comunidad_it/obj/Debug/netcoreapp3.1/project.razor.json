@@ -14392,11 +14392,6 @@
   "RootNamespace": "proyecto_comunidad_it",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\andre\\Desktop\\cursos\\comunidad_it\\proyectoFinal\\proyecto_comunidad_it\\Views\\Consulta\\Index.cshtml",
-      "TargetPath": "Views\\Consulta\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\andre\\Desktop\\cursos\\comunidad_it\\proyectoFinal\\proyecto_comunidad_it\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -14409,6 +14404,11 @@
     {
       "FilePath": "c:\\Users\\andre\\Desktop\\cursos\\comunidad_it\\proyectoFinal\\proyecto_comunidad_it\\Views\\Home\\respuestaContacto.cshtml",
       "TargetPath": "Views\\Home\\respuestaContacto.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\andre\\Desktop\\cursos\\comunidad_it\\proyectoFinal\\proyecto_comunidad_it\\Views\\Home\\Consulta.cshtml",
+      "TargetPath": "Views\\Home\\Consulta.cshtml",
       "FileKind": "mvc"
     },
     {

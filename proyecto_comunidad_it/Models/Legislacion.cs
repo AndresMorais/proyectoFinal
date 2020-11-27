@@ -10,9 +10,6 @@ namespace proyecto_comunidad_it.Models
         public string Origen {get;set;}
         public string Objeto {get;set;}
         // [DataType(DataType.Date)]
-        // public DateTime ReleaseDate { get; set; }
-       
-    }
-
-
+        // public DateTime ReleaseDate { get; set; }   
+    } 
 }
