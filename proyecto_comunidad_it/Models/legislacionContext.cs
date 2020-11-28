@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace proyecto_comunidad_it.Models
 {
-   public class legislacionContext :DbContext
+   public class legislacionContext: DbContext
     {
       
       public legislacionContext(DbContextOptions<legislacionContext> options)
@@ -11,7 +11,7 @@ namespace proyecto_comunidad_it.Models
       {
 
       }   
-      // public DbSet <legislacion> legislacion { get;set }
+      public DbSet <Legislacion> legislacion { get;set; }
 
 
 

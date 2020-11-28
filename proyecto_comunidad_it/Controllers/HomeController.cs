@@ -13,21 +13,30 @@ namespace proyecto_comunidad_it.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
+        private readonly legislacionContext db;
 
-        // public HomeController(ILogger<HomeController> logger)
-        // {
-        //     _logger = logger;
-        // }
+        public HomeController(ILogger<HomeController> logger,
+            legislacionContext contexto)
+        {
+            this.logger = logger;
+            this.db = contexto;
+        }
 
         public IActionResult Index()
         {
             return View();
         }
-
+        /// /// EL CONTROLADOR DE ABAJO RETORNA LA VISTA DE LA PAGINA CONSULTA
         public IActionResult Consulta()
         {
             return View();
+        }
+
+        /// EL CONTROLADOR DE ABAJO RETORNA LA LISTA DE CONSULTAS
+        public JsonResult ConsultarLegislacion()
+        {
+            return Json(db.legislacion.ToList());
         }
 
         public IActionResult Privacy()
@@ -48,7 +57,7 @@ namespace proyecto_comunidad_it.Controllers
 
         public string myMail = "aplicacioncomunidadit@gmail.com";
         public string myPassword = "Aplicacion_2020";
-        private readonly ILogger<HomeController> _logger;
+        // private readonly ILogger<HomeController> _logger;
 
         public string NombreContacto(string nombre)
         {
@@ -70,8 +79,8 @@ namespace proyecto_comunidad_it.Controllers
 
             string mensajeMail = $"{nombre}, tu mensaje fue recibido. Nos pondremos en contacto con usted.\n Su mensaje fue: {consulta}";
 
-            smtpClient.Send(myMail, mail, $"{nombre}, gracias por tu mensaje", mensajeMail);
-            smtpClient.Send(myMail, myMail, $"Llego un mail de {mail}", $"{consulta}");
+            // smtpClient.Send(myMail, mail, $"{nombre}, gracias por tu mensaje", mensajeMail);
+            // smtpClient.Send(myMail, myMail, $"Llego un mail de {mail}", $"{consulta}");
             
             return View("RespuestaContacto");
         }

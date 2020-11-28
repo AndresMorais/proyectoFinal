@@ -1,13 +1,20 @@
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using proyecto_comunidad_it.Models;
+// using legislacion.Models; NO ENCUENTRA LEGISLACION
+
+// USING DEL GITHAU DEL PROFESOR 
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
+
+
 
 namespace proyecto_comunidad_it
 {
@@ -24,6 +31,9 @@ namespace proyecto_comunidad_it
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<legislacionContext>(options =>
+                 options.UseSqlite(Configuration.GetConnectionString("legislacionContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
