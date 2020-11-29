@@ -14392,6 +14392,11 @@
   "RootNamespace": "proyecto_comunidad_it",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\andre\\Desktop\\cursos\\comunidad_it\\proyectoFinal\\proyecto_comunidad_it\\Views\\Home\\CargarLegislacion.cshtml",
+      "TargetPath": "Views\\Home\\CargarLegislacion.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\andre\\Desktop\\cursos\\comunidad_it\\proyectoFinal\\proyecto_comunidad_it\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"

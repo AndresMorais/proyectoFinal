@@ -1,0 +1,24 @@
+<h1>ESTA ES LA PAGINA PARA CARGAR LEGISLACION</h1>
+
+<form method="POST" action="@Url.Action("CrearLegislacion","Home")">
+    <div class="form-group">
+        <label for="Tipo">Tipo</label>
+        <input name="Tipo" type="text" placeholder="Ingresá el tipo de Legislacion.." required>
+    </div>
+
+    <div class="form-group">
+        <label for="Numero">Numero</label>
+        <input name="Numero" type="text" placeholder="Ingresá el número..." required>
+    </div>
+
+    <div class="form-group">
+        <label for="Origen">Origen</label>
+        <input name="Origen" type="text" placeholder="Ingresá el nombre del Organismo..." required>
+    </div>
+     <div class="form-group">
+        <label for="Objeto">Objeto</label>
+        <textarea name="Objeto"  placeholder="Ingresa una descripción de la ..." required></textarea>
+    </div>
+
+    <input type="submit" value="Cargar">
+</form>

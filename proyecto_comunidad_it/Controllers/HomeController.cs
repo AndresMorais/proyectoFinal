@@ -27,6 +27,7 @@ namespace proyecto_comunidad_it.Controllers
         {
             return View();
         }
+
         /// /// EL CONTROLADOR DE ABAJO RETORNA LA VISTA DE LA PAGINA CONSULTA
         public IActionResult Consulta()
         {
@@ -37,6 +38,30 @@ namespace proyecto_comunidad_it.Controllers
         public JsonResult ConsultarLegislacion()
         {
             return Json(db.legislacion.ToList());
+        }
+
+        /// CARGAR UNA NUEVA LEGISLACION
+
+        public JsonResult CrearLegislacion(string Tipo, int Numero, string Origen, string Objeto)
+        {
+            Legislacion nuevaLegislacion = new Legislacion{
+                Tipo = Tipo,
+                Numero = Numero,
+                Origen = Origen,
+                Objeto = Objeto
+            };
+            db.legislacion.Add(nuevaLegislacion);
+            db.SaveChanges ();
+            return Json (nuevaLegislacion);
+             
+            
+        }
+
+        /// RETORNA LA VISTA CARGARLEGISLACION 
+
+        public IActionResult CargarLegislacion()
+        {
+            return View();
         }
 
         public IActionResult Privacy()
