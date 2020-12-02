@@ -28,9 +28,19 @@ namespace proyecto_comunidad_it
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+
+        /// CONECTA LA APLICACIÓN CON EL CONTEXTO DE LA BASE DE DATOS 
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            // CONTRALA LAS CONSULTAS CICLICAS. PROBLEMAS PARA INSTALAER EL PAQUETE 
+            // {
+            //     services.AddControllersWithViews()
+            //     .AddNewtonsoftJson(options =>
+            //     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            // );
+
 
             services.AddDbContext<legislacionContext>(options =>
                  options.UseSqlite(Configuration.GetConnectionString("legislacionContext")));

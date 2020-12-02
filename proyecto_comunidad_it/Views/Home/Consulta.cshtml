@@ -1,1 +1,29 @@
+@model List<Legislacion>
+
 <h1>ACA EL USUARIO REALIZA LAS CONSULDAS DE LA LEGISLACION DE INTERES</h1>
+<p> Tengo @Model.Count legislacion</p>
+
+@* MUESTRA CADA UNA DE LAS NOTAS EN LA VISTA *@
+@foreach (Legislacion legislacion in Model)
+{
+    <div>
+            <h2>@legislacion.Tipo</h2>
+            <h2>@legislacion.Numero</h2>
+            <h2>@legislacion.Origen</h2>
+            <p>@legislacion.Objeto</p>
+
+    </div>
+}
+
+//copiado del githau de los compas de clase
+ @* <div class="content">
+
+    <div class="contact-wrapper animated bounceInUp">
+        <div class="contact-saludo">
+            <img src="https://i.pinimg.com/originals/d8/78/ed/d878ed577f7371182d4b31707caa80bf.png" alt="ImagenSuccess">
+            <h1>@ViewBag.Tipo</h1>
+            <p>@ViewBag.Objeto</p>
+        </div>
+    </div>
+
+</div>  *@
