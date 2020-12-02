@@ -45,13 +45,14 @@ namespace proyecto_comunidad_it.Controllers
 
         /// CARGAR UNA NUEVA LEGISLACION
         // public JsonResult CrearLegislacion(string Tipo, int Numero, string Origen, string Objeto)
-        public string CrearLegislacion(string Tipo, int Numero, string Origen, string Objeto)
+        public string CrearLegislacion(string Tipo, int Numero, string Origen, string Objeto, string Enlace)
         {
             Legislacion nuevaLegislacion = new Legislacion (){
                 Tipo = Tipo,
                 Numero = Numero,
                 Origen = Origen,
-                Objeto = Objeto
+                Objeto = Objeto,
+                Enlace = Enlace
 
             };
             db.legislacion.Add(nuevaLegislacion);

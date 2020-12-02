@@ -10,11 +10,11 @@ namespace proyecto_comunidad_it.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        
         public string Tipo { get; set; }
         public int Numero {get;set;}
         public string Origen {get;set;}
         public string Objeto {get;set;}
+        public string Enlace {get;set;}
         // [DataType(DataType.Date)]
         // public DateTime ReleaseDate { get; set; }   
     } 
