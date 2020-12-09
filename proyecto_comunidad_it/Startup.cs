@@ -32,6 +32,8 @@ namespace proyecto_comunidad_it
         /// CONECTA LA APLICACIÓN CON EL CONTEXTO DE LA BASE DE DATOS 
         public void ConfigureServices(IServiceCollection services)
         {
+            // ACA VA SESION
+
             services.AddControllersWithViews();
 
             // CONTRALA LAS CONSULTAS CICLICAS. PROBLEMAS PARA INSTALAER EL PAQUETE 
@@ -70,7 +72,9 @@ namespace proyecto_comunidad_it
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                    // CAMBIA LAS PAGINAS DE INICIO PREDETERMINADAS
+                    pattern: "{controller=Home}/{action=Consulta}/{id?}");
             });
         }
     }

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using proyecto_comunidad_it.Models;
 using System.Net;
+using System.ComponentModel.DataAnnotations;
 
 namespace proyecto_comunidad_it.Controllers
 {
@@ -15,6 +16,7 @@ namespace proyecto_comunidad_it.Controllers
     {
         private readonly ILogger<HomeController> logger;
         private readonly legislacionContext db;
+
 
         public HomeController(ILogger<HomeController> logger,
             legislacionContext contexto)
@@ -27,6 +29,39 @@ namespace proyecto_comunidad_it.Controllers
         {
             return View();
         }
+
+// INICIO LOGIN
+       
+
+
+        [HttpPost]
+        public ActionResult Index(LoginViewModel loginDataModel)
+       
+        {
+            if (ModelState.IsValid)
+            {
+             // AQUÍ EL CÓDIGO DE VALIDACIÓN DEL USUARIO
+                
+                // return RedirectToAction("LoginOk");
+                return RedirectToAction("CargarLegislacion");
+                 
+            }                
+            else
+            {
+                return View(loginDataModel);
+            }                
+        }
+
+        public ActionResult LoginOK()
+        {
+            // LA VALIDACIÓN DEL USUARIO HA SIDO CORRECTA
+            
+            return View();
+        }
+
+     // FIN LOGIN
+
+        
 
         /// /// EL CONTROLADOR DE ABAJO RETORNA LA VISTA DE LA PAGINA CONSULTA
         public IActionResult Consulta()
