@@ -9,7 +9,7 @@ namespace proyecto_comunidad_it.Models
         [Display(Name = "Correo electrónico")]
         [Required(ErrorMessage = "Este campo es requerido.")]
         [RegularExpression(@"aplicacioncomunidadit@gmail.com",
-            ErrorMessage = "Dirección de Correo electrónico incorrecta.")]
+        ErrorMessage = "Dirección de Correo electrónico incorrecta.")]
             //   [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*",
             // ErrorMessage = "Dirección de Correo electrónico incorrecta.")]
         [StringLength(100, ErrorMessage = "Longitud máxima 100")]

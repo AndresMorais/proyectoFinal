@@ -8,5 +8,7 @@ $(document).ready(function(){
 
 $('#BotonCargarNota').on('click', function(){
         alert('SE HA REALIZADO LA CARGA CON EXITO');
+       
+        
 })
 });

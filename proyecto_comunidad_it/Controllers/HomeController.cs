@@ -31,9 +31,6 @@ namespace proyecto_comunidad_it.Controllers
         }
 
 // INICIO LOGIN
-       
-
-
         [HttpPost]
         public ActionResult Index(LoginViewModel loginDataModel)
        
@@ -58,29 +55,27 @@ namespace proyecto_comunidad_it.Controllers
             
             return View();
         }
-
      // FIN LOGIN
 
         
 
-        /// /// EL CONTROLADOR DE ABAJO RETORNA LA VISTA DE LA PAGINA CONSULTA
+        /// RETORNA LA VISTA DE LA PAGINA CONSULTA
         public IActionResult Consulta()
         {
             return View(db.legislacion.ToList());
         }
 
-        /// EL CONTROLADOR DE ABAJO RETORNA LA LISTA DE LEGISLACION CARGADAS
-        public JsonResult ConsultarLegislacion()
-        {
-            return Json(db.legislacion.ToList());
+        ///  RETORNA LA LISTA DE LEGISLACION CARGADAS
+        // public JsonResult ConsultarLegislacion()
+        // {
+        //     return Json(db.legislacion.ToList());
+        // }
 
-        }
-
+        
 
 
         /// CARGAR UNA NUEVA LEGISLACION
-        // public JsonResult CrearLegislacion(string Tipo, int Numero, string Origen, string Objeto)
-        public string CrearLegislacion(string Tipo, int Numero, string Origen, string Objeto, string Enlace)
+        public IActionResult CrearLegislacion (string Tipo, int Numero, string Origen, string Objeto, string Enlace)
         {
             Legislacion nuevaLegislacion = new Legislacion (){
                 Tipo = Tipo,
@@ -92,12 +87,12 @@ namespace proyecto_comunidad_it.Controllers
             };
             db.legislacion.Add(nuevaLegislacion);
             db.SaveChanges ();
-            return "OK!";
-            // return Json (nuevaLegislacion);             
+            return RedirectToAction("CargarLegislacion", "Home");
+    
+            // return Json (nuevaLegislacion);                       
         }
-
-        /// RETORNA LA VISTA CARGARLEGISLACION 
-
+   
+        // VISTAS
         public IActionResult CargarLegislacion()
         {
             return View();
@@ -118,7 +113,7 @@ namespace proyecto_comunidad_it.Controllers
             return View();
         }
         
-
+        // MAIL
         public string myMail = "aplicacioncomunidadit@gmail.com";
         public string myPassword = "Aplicacion_2020";
         // private readonly ILogger<HomeController> _logger;
@@ -129,22 +124,23 @@ namespace proyecto_comunidad_it.Controllers
         }
 
         [HttpPost]
-        public IActionResult EnviarContacto (string nombre,  string apellido, string mail, string consulta )
+        public IActionResult EnviarContacto (string nombre, string mail, string mensaje)
          {
             ViewBag.nombre = nombre;
             ViewBag.mail = mail;
-            ViewBag.mensaje = consulta;
+            ViewBag.mensaje = mensaje;
 
             var smtpClient = new SmtpClient("smtp.gmail.com"){
-                Port = 587,
-                Credentials = new NetworkCredential(myMail,myPassword),
+                Port = 465,
+                UseDefaultCredentials = false,
+                Credentials = new NetworkCredential(myMail, myPassword),
                 EnableSsl = true,
             };
 
-            string mensajeMail = $"{nombre}, tu mensaje fue recibido. Nos pondremos en contacto con usted.\n Su mensaje fue: {consulta}";
+            string mensajeMail = $"{nombre}, tu mensaje fue recibido. Nos pondremos en contacto con usted.\n Su mensaje fue: {mensaje}";
 
-            // smtpClient.Send(myMail, mail, $"{nombre}, gracias por tu mensaje", mensajeMail);
-            // smtpClient.Send(myMail, myMail, $"Llego un mail de {mail}", $"{consulta}");
+            smtpClient.Send(myMail,mail, $"{nombre}, gracias por tu mensaje", mensajeMail);
+            smtpClient.Send(myMail,myMail, $"Llego un mail de {nombre}"," Revisa el servidor");
             
             return View("RespuestaContacto");
         }
