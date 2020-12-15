@@ -3,47 +3,58 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    <h1 class="display-4">Registro</h1>
+    <p>Para realizar la carga o actualización del repositorio legislativo debe acceder con su usuario y contraseña.</p>
 
 
-<a id="BotonCargarNota" href="#">BOTON DE JS</a>
 
 
-@model LoginViewModel
 
-<div class="row">
-    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
-    {
-        <div class="col-md-3 form-horizontal">
-            <br />
-            @Html.LabelFor(x => x.Email, new { @class = "" })
-            @Html.TextBoxFor(x => x.Email, new { @class = "form-control", autofocus = "autofocus" })
-            @Html.ValidationMessageFor(x => x.Email, null, new { @class = "text-danger" })
-            <br />
+            @model LoginViewModel
 
-            @Html.LabelFor(x => x.Password)
-            <div class="input-group">
-                @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
-                <span class="input-group-btn">
-                    <button id="verPassword" class="btn btn-default" type="button">
-                        <i class="glyphicon glyphicon-eye-open"></i>
-                    </button>
-                </span>
+        <div> 
+            <div class="col-md-4">
+                <div class="col align-self-center"> 
+               
+                        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                        {
+                            <div>
+                                <br />
+                                @Html.LabelFor(x => x.Email, new { @class = "" })
+                                @Html.TextBoxFor(x => x.Email, new { @class = "form-control", autofocus = "autofocus" })
+                                @Html.ValidationMessageFor(x => x.Email, null, new { @class = "text-danger" })
+                                <br />
+
+                                @Html.LabelFor(x => x.Password)
+                                <div class="input-group">
+                                    @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                                    <span class="input-group-btn">
+                                        <button id="verPassword" class="btn btn-default" type="button">
+                                            <i class="glyphicon glyphicon-eye-open"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                @Html.ValidationMessageFor(x => x.Password, null, new { @class = "text-danger" })
+                                <br />
+
+                                <button class="btn btn-primary" type="submit">
+                                    Iniciar sesión
+                                </button>
+
+                                <div class="checkbox-inline pull-right">
+                                    @Html.CheckBoxFor(x => x.RememberMe, new { @class = "" })
+                                    @Html.LabelFor(x => x.RememberMe, new { @class = "" })
+                                </div>
+                                <br />
+                            </div>
+                             }
+                </div>             
             </div>
-            @Html.ValidationMessageFor(x => x.Password, null, new { @class = "text-danger" })
-            <br />
-
-            <button class="btn btn-primary" type="submit">
-                Iniciar sesión
-            </button>
-
-            <div class="checkbox-inline pull-right">
-                @Html.CheckBoxFor(x => x.RememberMe, new { @class = "" })
-                @Html.LabelFor(x => x.RememberMe, new { @class = "" })
-            </div>
-            <br />
         </div>
-    }
 </div>
+
+
+
+
+
+@* <a id="BotonCargarNota" href="#">BOTON DE JS</a> *@

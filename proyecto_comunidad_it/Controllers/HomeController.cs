@@ -131,7 +131,7 @@ namespace proyecto_comunidad_it.Controllers
             ViewBag.mensaje = mensaje;
 
             var smtpClient = new SmtpClient("smtp.gmail.com"){
-                Port = 465,
+                Port = 587,
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(myMail, myPassword),
                 EnableSsl = true,

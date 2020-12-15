@@ -1,18 +1,63 @@
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+
 @model List<Legislacion>
 
-<h1>ACA EL USUARIO REALIZA LAS CONSULDAS DE LA LEGISLACION DE INTERES</h1>
-<p> Tengo @Model.Count legislacion</p>
+<h1>REPOSITORIO LEGISLATIVO</h1>
+<p> Actualmente el repositorio cuenta con @Model.Count leyes, decretos, resoluciones y ordenanzas, tanto de organismos nacional nacionales, provinciales y municipales cuyo ámbito de aplicación es la Provincia de Buenos Aires.</p>
+<p> Para facilitar la búsqueda, puede aplicar filtros segun el tipo de Legislación, el organismo responsable  o el número.</p> 
 
-@* MUESTRA CADA UNA DE LAS NOTAS EN LA VISTA *@
-@foreach (Legislacion legislacion in Model)
-{
-    <div>
-            <h4>@legislacion.Tipo</h4>
-            <p>@legislacion.Numero</p>
-            <p>@legislacion.Origen</p>
-            <p>@legislacion.Objeto</p>
-            <p>@legislacion.Enlace</p>
+<body>
+ <div class="container mt-3"> 
+  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
+  <br>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Tipo de Legislación:</th>
+        <th>Organismo Resposable:</th>
+        <th>Número:</th>
+		<th>Objeto:</th>
+		<th>Acceder:</th>
+      </tr>
+    </thead>
 
-    </div>
-}
+
+		@foreach (Legislacion legislacion in Model)
+		{
+			<tbody id="myTable">
+			<tr>
+				<td>@legislacion.Tipo</td>
+				<td>@legislacion.Origen</td>
+				<td>@legislacion.Numero</td>
+				<td>@legislacion.Objeto</td>
+				<td>@legislacion.Enlace</td>
+			</tr>
+			</tbody>
+		}
+  </table>
+
+  
+  
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+
+</body>
 
