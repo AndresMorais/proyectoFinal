@@ -1,30 +1,43 @@
 <h1>ESTA ES LA PAGINA PARA CARGAR LEGISLACION</h1>
 
-<form method="POST" action="@Url.Action("CrearLegislacion","Home")">
-    <div class="form-group">
-        <label for="Tipo">Tipo</label>
-        <input name="Tipo" type="text" placeholder="Ingresá el tipo de Legislacion.." required>
-    </div>
+  <div class="container">
+        <div class="row">
+            <div class="col align-self-start"></div>
+                <div class="col align-self-center" id="formulario_carga">
 
-    <div class="form-group">
-        <label for="Numero">Numero</label>
-        <input name="Numero" type="text" placeholder="Ingresá el número..." required>
-    </div>
+                    <form method="POST" action="@Url.Action("CrearLegislacion","Home")">
+                        <div class="form-group">
+                            <label for="Tipo">Tipo</label>
+                            <input name="Tipo" class="form-control" type="text" placeholder="Ingresá el tipo de Legislacion.." required>
+                        </div>
 
-    <div class="form-group">
-        <label for="Origen">Origen</label>
-        <input name="Origen" type="text" placeholder="Ingresá el nombre del Organismo..." required>
-    </div>
-     <div class="form-group">
-        <label for="Objeto">Objeto</label>
-        <textarea name="Objeto"  placeholder="Ingresa una descripción de la ..." required></textarea>
-    </div>
-    <div class="form-group">
-        <label for="Enlace">Enlace</label>
-        <input name="Enlace" type="url" placeholder="Ingresá el link para acceder a la normativa" required>
-    </div>
-     @* EL ID ESTA VINCULADO AL JS PARA QUE APAREZCA EL ALERT *@
-    <input id= "BotonCargarNota" type="submit" value="Cargar">
+                        <div class="form-group">
+                            <label for="Numero" class="form-label">Numero</label>
+                            <input name="Numero"class="form-control" type="text" placeholder="Ingresá el número..." required>
+                        </div>
 
-   
-</form>
+                        <div class="form-group">
+                            <label for="Origen" class="form-label">Origen</label>
+                            <input name="Origen" class="form-control" type="text" placeholder="Ingresá el nombre del Organismo..." required>
+                        </div>
+                        <div class="form-group">
+                            <label for="Objeto" class="form-label">Objeto</label>
+                            <textarea name="Objeto" class="form-control" placeholder="Ingresa una descripción de la ..." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="Enlace" class="form-label">Enlace</label>
+                            <input name="Enlace" class="form-control" type="url" placeholder="Ingresá el link para acceder a la normativa" required>
+                        </div>
+                        @* EL ID ESTA VINCULADO AL JS PARA QUE APAREZCA EL ALERT *@
+                        @* <input id= "BotonCargarNota" type="submit" value="Cargar">                    *@
+                        
+                        <button id= "BotonCargarNota" class="btn btn-primary" type="submit" >
+                            Cargar
+                        </button>
+                    </form>
+
+                </div>
+                <div class="col align-self-start"></div> 
+        </div>
+</div>
+

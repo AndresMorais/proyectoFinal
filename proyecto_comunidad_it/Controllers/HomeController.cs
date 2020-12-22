@@ -112,6 +112,8 @@ namespace proyecto_comunidad_it.Controllers
         {
             return View();
         }
+
+       
         
         // MAIL
         public string myMail = "aplicacioncomunidadit@gmail.com";

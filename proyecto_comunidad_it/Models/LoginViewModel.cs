@@ -6,10 +6,10 @@ namespace proyecto_comunidad_it.Models
 {
     public class LoginViewModel
     {
-        [Display(Name = "Correo electrónico")]
+        [Display(Name = "Usuario")]
         [Required(ErrorMessage = "Este campo es requerido.")]
-        [RegularExpression(@"aplicacioncomunidadit@gmail.com",
-        ErrorMessage = "Dirección de Correo electrónico incorrecta.")]
+        [RegularExpression(@"ComunidadIT",
+        ErrorMessage = "El usuario ingresado es incorrecta.")]
             //   [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*",
             // ErrorMessage = "Dirección de Correo electrónico incorrecta.")]
         [StringLength(100, ErrorMessage = "Longitud máxima 100")]
@@ -18,8 +18,8 @@ namespace proyecto_comunidad_it.Models
 
         [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "Este campo es requerido.")]
-        [RegularExpression(@"Aplicacion_2020",
-            ErrorMessage = "Contraseña incorrecta.")]
+        [RegularExpression(@"Aplicacion2020",
+            ErrorMessage = "Contraseña es incorrecta.")]
         [StringLength(15, ErrorMessage = "Longitud entre 6 y 15 caracteres.",
                       MinimumLength = 6)]
         [DataType(DataType.Password)]

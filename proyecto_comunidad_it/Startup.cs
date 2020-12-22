@@ -74,7 +74,7 @@ namespace proyecto_comunidad_it
                     name: "default",
 
                     // CAMBIA LAS PAGINAS DE INICIO PREDETERMINADAS
-                    pattern: "{controller=Home}/{action=Consulta}/{id?}");
+                    pattern: "{controller=Home}/{action=Privacy}/{id?}");
             });
         }
     }

@@ -10,15 +10,30 @@
 
 @model List<Legislacion>
 
-<h1>REPOSITORIO LEGISLATIVO</h1>
-<p> Actualmente el repositorio cuenta con @Model.Count leyes, decretos, resoluciones y ordenanzas, tanto de organismos nacional nacionales, provinciales y municipales cuyo ámbito de aplicación es la Provincia de Buenos Aires.</p>
-<p> Para facilitar la búsqueda, puede aplicar filtros segun el tipo de Legislación, el organismo responsable  o el número.</p> 
+  <div class="text-center">
+    <h1 class="display-4">Repositorio Legislativo</h1>
+    <h6 class="display-5">
+      Actualmente el repositorio cuenta con @Model.Count leyes, decretos, resoluciones y ordenanzas,
+       tanto de organismos nacional nacionales, provinciales y municipales cuyo ámbito de aplicación 
+       es la Provincia de Buenos Aires.
+    </h6>
+</div>
+<br>
+<br>
+
+<div class="text-center" id="barra_busqueda">
+   <p> Para facilitar la búsqueda, puede aplicar filtros segun el tipo de Legislación, 
+      el organismo responsable  o el número.
+  </p> 
+   <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
+</div>
 
 <body>
  <div class="container mt-3"> 
-  <input class="form-control" id="myInput" type="text" placeholder="Buscar..">
+  
   <br>
-  <table class="table table-bordered">
+  @* <table class="table table-bordered"> *@
+  <table class="table table-hover">
     <thead>
       <tr>
         <th>Tipo de Legislación:</th>
@@ -43,6 +58,10 @@
 			</tbody>
 		}
   </table>
+
+  <br>
+  <br>
+  <br>
 
   
   
